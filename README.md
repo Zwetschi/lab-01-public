@@ -9,7 +9,7 @@ After the Duckiebot has started, check if there is a Wi-Fi connection and ensure
 - Test connectivity by pinging the bot `ping local.[botname]` ([botname] is also often refered as <Robot_Name>, [NAME-DUCKIEBOT], etc., in our case, the names are: einstein, andrew, tesla, oppenheimer, planck)
 - Ensure that the Battery SOC is above 60%.
 
-- [ ] Once you've confirmed these preliminaries, access the Duckiebot's dashboard through your web browser. Type `http://[botname].local/` into your browser's address bar and explore the Duckiebot dashboard. Start with the following tabs:
+- [X] Once you've confirmed these preliminaries, access the Duckiebot's dashboard through your web browser. Type `http://[botname].local/` into your browser's address bar and explore the Duckiebot dashboard. Start with the following tabs:
 - "Info" - Provides an overview of information about the Duckiebot.
 - "Mission Control" - Displays the camera image from your Duckiebot and offers control over three different speeds.
 - "Health" - Provides a detailed current status of the bot.
