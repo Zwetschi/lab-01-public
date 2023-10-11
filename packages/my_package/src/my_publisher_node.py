@@ -15,7 +15,8 @@ class MyPublisherNode(DTROS):
         # static parameters
         self._vehicle_name = os.environ["VEHICLE_NAME"]
         # construct publisher
-        self.pub = rospy.Publisher("chatter", String, queue_size=10)
+        topic_name = "chatter"
+        self.pub = rospy.Publisher(topic_name, String, queue_size=10)
 
     def run(self):
         # publish message every 1 second (1 Hz)
