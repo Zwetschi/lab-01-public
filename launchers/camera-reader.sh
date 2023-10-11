@@ -11,3 +11,7 @@ rosrun my_package camera_reader_node.py
 
 # wait for app to end
 dt-launchfile-join
+
+# cmds
+# dts devel build -f
+# dts devel run -R ROBOT_NAME -L camera-reader -X
