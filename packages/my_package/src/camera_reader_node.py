@@ -23,12 +23,19 @@ class CameraReaderNode(DTROS):
         _camera_topic = r""  # suche knoten der das haben kann
         sub = rospy.Subscriber(_camera_topic, CompressedImage, self.callback)
 
-    def callback(self, msg):
-        # convert JPEG bytes to CV image
+    def callback(self, msg: CompressedImage):
         # msg = np.frombuffer(jpeg_data, np.uint8)# gehe mal davon aus dass das argument schon n array ist
         # image = cv2.imdecode(msg, cv2.IMREAD_COLOR)
         image = self._bridge.compressed_imgmsg_to_cv2(msg)  # wird das hier sein
-        # display frame
+        img = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)  # NOTE ist im rgb?
+        img_blur = cv2.GaussianBlur(img, (5, 5), 2)
+        edges = cv2.Canny(img_blur, 100, 180)
+        # anzeigen von mehreren bilder mit np.concatenate
+        stacked_image = np.hstack((image1, image2))
+        cv2.imshow("hfh", img1)
+        cv2.waitKey(0)
+        cv2.imshow("hfh", img2)
+        cv2.waitKey(0)
         self.show(image)
 
     def show(self, img):
